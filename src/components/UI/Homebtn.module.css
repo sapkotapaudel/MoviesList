@@ -1,0 +1,97 @@
+.btngroup button {
+     /* Green border */
+    color: black; /* White text */
+    padding: 15px 20px; /* Some padding */
+    cursor: pointer; /* Pointer/hand icon */
+    width: 50%; /* Set a width if needed */
+    display: block; /* Make the buttons appear below each other */
+    margin: auto;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 23px;
+  }
+
+
+    
+  .form {
+    width: 50%;
+    display: flex;
+    margin: auto;
+    justify-content: center; 
+
+  }
+
+  .form input{
+    margin-right: 5px;
+    /* padding: 20px 150px; */
+    width: 600px;
+    height: 40px;
+  }
+
+  .form button{
+  
+    cursor: pointer;
+    /* padding: 3px 15px; */
+    height: 50px;
+    margin-right: 5px;
+    font-weight: bold;
+    font-size: 15px;
+    border-radius: 4px;
+  }
+
+  .btngroup button:not(:last-child) {
+    border-bottom: none; /* Prevent double borders */
+  }
+  
+  /* Add a background color on hover */
+  .btngroup button:hover, form button:hover {
+    background-color: greenyellow;
+    border: 1px solid greenyellow;
+  }
+  
+  .search{
+    background-color: rgb(35, 35, 182); /* Green background */
+    border: 1px solid rgb(83, 83, 218);
+  }
+
+  .fav{
+    background-color: yellow; /* Green background */
+    border: 1px solid yellow;
+  }
+
+  .dislike{
+    background-color: red; /* Green background */
+    border: 1px solid red;
+  }
+
+  .topic{
+      margin-top: 25px;
+      margin-bottom: 40px;
+      justify-content: center;
+      text-align: center;
+      font-weight: bolder;
+      font-size: 30px;
+      color: rgb(228, 156, 68);
+  }
+
+  .inputError{
+    color: red;
+    font-style: italic;
+    width: 50%;
+    display: flex;
+    margin: auto;
+    justify-content: left; 
+    font-size: smaller;
+  }
+
+  .inputSearch{
+    background-color: black; /* Green background */
+    border: 1px solid black;
+    color: white;
+
+  }
+
+  .cancel{
+    border: 1px solid rgb(223, 219, 219);
+  }
