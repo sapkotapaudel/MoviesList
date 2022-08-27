@@ -19,9 +19,20 @@ const Catchdisplay = (props) => {
         setHttpError(true);
         throw new Error("Something went wrong");
       }
+
+
       console.log("ResonseData:");
       console.log(responseData);
       const movies = responseData.Search;
+
+  //     const loadedMovies =[]
+  //     movies.map(eachMovie=>(
+  //       loadedMovies.push({
+  //         ...eachMovie
+         
+  //       })
+  // ))
+      
       setAllMovies(movies);
       setloadingError(false)
     };

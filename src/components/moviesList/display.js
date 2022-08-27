@@ -12,26 +12,36 @@ const Display = (props) => {
     props.movies.Poster === "N/A" ? unavailablePoster : props.movies.Poster;
   const posterSize = props.movies.Poster === "N/A" ? classes.defaultPoster : "";
 
-  const likeHandler = () => {
+  const likeHandler = (imdbID) => {
     setSendLikeStorage(true);
 
+
     const likeConfirmHandler = async () => {
-        await fetch("https://mymovielist-7f102-default-rtdb.firebaseio.com/likedmovies.json",{
+
+      fetch(`https://mymovielist-7f102-default-rtdb.firebaseio.com/dislikedmovies/${imdbID}.json`, {method:"DELETE"}).catch()
+       
+        await fetch(`https://mymovielist-7f102-default-rtdb.firebaseio.com/likedmovies/${imdbID}.json`,{
             method:'POST',
-            body:JSON.stringify({user:props.movies})
+            body:JSON.stringify({imdbID:props.movies})
         })
     }
 
     likeConfirmHandler()
   };
 
-  const disLikeHandler = () => {
+  const disLikeHandler = (imdbID) => {
     setSendDislikeStorage(true)
     setSendLikeStorage(false);
+
+   
     const dislikeConfirmHandler = async () => {
-        await fetch("https://mymovielist-7f102-default-rtdb.firebaseio.com/dislikedmovies.json",{
+      fetch(`https://mymovielist-7f102-default-rtdb.firebaseio.com/likedmovies/${imdbID}.json`,{
+        method: 'DELETE'
+      }).catch()
+      
+        await fetch(`https://mymovielist-7f102-default-rtdb.firebaseio.com/dislikedmovies/${imdbID}.json`,{
             method:'POST',
-            body:JSON.stringify({user:props.movies})
+            body:JSON.stringify({imdbID:props.movies})
         })
     }
 
@@ -39,14 +49,29 @@ const Display = (props) => {
     
   }
 
-  const removelikeHandler = () =>{
+  const removelikeHandler = (imdbID) =>{
 
     setSendLikeStorage(false);
+    const remove=()=>{
+      fetch(`https://mymovielist-7f102-default-rtdb.firebaseio.com/likedmovies/${imdbID}.json`,{
+        method: 'DELETE'
+      })
+
+    }
+    remove()
   }
 
-  const removedisLikeHandler = () => {
+  const removedisLikeHandler = (imdbID) => {
 
     setSendDislikeStorage(false)
+
+    const remove=()=>{
+      fetch(`https://mymovielist-7f102-default-rtdb.firebaseio.com/dislikedmovies/${imdbID}.json`,{
+        method: 'DELETE'
+      })
+
+    }
+    remove()
   }
 
   return (
@@ -57,11 +82,11 @@ const Display = (props) => {
           <div>{props.movies.Title}</div>
 
           <div className={classes.eachMovBtn}>
-            {!sendLikeStorage && <button onClick={likeHandler} className={classes.fav}>Favrouite</button>}
-            {sendLikeStorage && <button onClick={removelikeHandler} className={classes.fav}>Remove Favrouite</button>}
+            {!sendLikeStorage && <button onClick={()=>likeHandler(props.movies.imdbID)} className={classes.fav}>Favrouite</button>}
+            {sendLikeStorage && <button onClick={()=>removelikeHandler(props.movies.imdbID)} className={classes.fav}>Remove Favrouite</button>}
             
-            {!sendDislikeStorage && <button onClick={disLikeHandler} className={classes.dislike}>Dislike</button>}
-            {sendDislikeStorage && <button onClick={removedisLikeHandler} className={classes.dislike}>Remove Disliked</button>}
+            {!sendDislikeStorage && <button onClick={()=>disLikeHandler(props.movies.imdbID)} className={classes.dislike}>Dislike</button>}
+            {sendDislikeStorage && <button onClick={()=>removedisLikeHandler(props.movies.imdbID)} className={classes.dislike}>Remove Disliked</button>}
           </div>
         </div>
       </div>
