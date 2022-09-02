@@ -1,0 +1,30 @@
+.loadingError{
+    color: black;
+    font-style: italic;
+    width: 50%;
+    display: flex;
+    margin: auto;
+    justify-content: left; 
+    font-size: smaller;
+    font-weight: bolder;
+}
+
+.inputError{
+    color: red;
+    font-style: italic;
+    width: 50%;
+    display: flex;
+    margin: auto;
+    justify-content: left; 
+    font-size: smaller;
+    font-weight: bolder;
+  }
+
+  .allMovies{
+    justify-content: center;
+    text-align: center;
+    display: block;
+    width: 86%;
+    margin: auto;
+    margin-top: 20px;
+  }

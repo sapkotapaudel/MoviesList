@@ -24,18 +24,11 @@ const Catchdisplay = (props) => {
       console.log("ResonseData:");
       console.log(responseData);
       const movies = responseData.Search;
-
-  //     const loadedMovies =[]
-  //     movies.map(eachMovie=>(
-  //       loadedMovies.push({
-  //         ...eachMovie
-         
-  //       })
-  // ))
       
       setAllMovies(movies);
       setloadingError(false)
     };
+    
     fetchMovies(props.onChange).catch(() => {
       setloadingError(false)
       setHttpError(true)
