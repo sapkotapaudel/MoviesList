@@ -7,6 +7,7 @@ const Catchdisplay = (props) => {
   const [httpError, setHttpError] = useState(false);
   const [loadingError, setloadingError] = useState(true);
 
+
   useEffect(() => {
     const fetchMovies = async () => {
       const response = await fetch(
@@ -28,12 +29,14 @@ const Catchdisplay = (props) => {
       setAllMovies(movies);
       setloadingError(false)
     };
-    
+
     fetchMovies(props.onChange).catch(() => {
       setloadingError(false)
       setHttpError(true)
     });
   }, [props]);
+
+  
 
   if (loadingError) {
     return <p className={classes.loadingError}>Loading...</p>;

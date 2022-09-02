@@ -1,13 +1,21 @@
 import React, { useEffect, useState } from "react";
 import classes from "./display.module.css";
 import unavailablePoster from "./../img/unavailablePoster.jpeg";
-
+import {db} from './../../firebase-config'
+import {collection, getDocs} from "firebase/firestore"
 
 
 const Display = (props) => {
   const [sendLikeStorage, setSendLikeStorage] = useState(false);
   const [sendDislikeStorage, setSendDislikeStorage] = useState(false);
+  const userCollectionRef = collection(db, "users")
 
+  const createUser = async () => {}
+
+
+
+
+  
   const posterSrc =
     props.movies.Poster === "N/A" ? unavailablePoster : props.movies.Poster;
   const posterSize = props.movies.Poster === "N/A" ? classes.defaultPoster : "";
