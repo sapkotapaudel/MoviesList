@@ -1,0 +1,45 @@
+.moviesList{
+    float:left;
+    margin:auto;
+    margin-left: 25px;
+    margin-top:30px;
+
+}
+
+.moviesList:nth-child(3n+1)
+{
+
+    clear:left;
+   
+
+}
+
+.defaultPoster{
+    width: 300px;
+    height:425px;
+
+}
+.eachMovie{
+    display: inline-block;
+    justify-content: center;
+    text-align: center;
+    margin-right: 3px;
+    padding: 7px;
+  
+
+}
+
+.fav:hover{
+    background-color: yellowgreen;
+    border-color: yellowgreen;
+  }
+  
+  .fav{
+    background-color: yellow;
+    border-color: yellow;
+    margin-left: 4px;
+    border-radius: 3px;
+    height: 40px;
+    width: 90px;
+    font-weight: bold;
+  }

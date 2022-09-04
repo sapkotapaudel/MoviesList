@@ -15,6 +15,8 @@ const Homebtn = () => {
   const searchBarHandler = () => {
     setSearchBar(true);
     setChosenMovie(false);
+    setLikedMovies(false);
+    setDislikedMovies(false);
   };
 
   const userInputHandler = (event) => {
@@ -42,6 +44,7 @@ const Homebtn = () => {
     setChoosenMovieName("");
     setChosenMovie(false);
     setInputError("valid");
+    
   };
 
   const likedMoviesHandler = () => {
@@ -77,8 +80,8 @@ const Homebtn = () => {
         )}
       </div>
 
-      {likedMovies && <Like onChange={choosenMovieName}/>}
-      {dislikedMovies && <Dislike onChange={choosenMovieName}/>}
+      {likedMovies && !searchBar && <Like onChange={choosenMovieName}/>}
+      {dislikedMovies && !searchBar && <Dislike onChange={choosenMovieName}/>}
 
       {searchBar && (
         <form onSubmit={formSubmitHandler} className={classes.form}>
