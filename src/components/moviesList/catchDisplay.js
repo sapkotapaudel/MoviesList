@@ -11,7 +11,7 @@ const Catchdisplay = (props) => {
   useEffect(() => {
     const fetchMovies = async () => {
       const response = await fetch(
-        `http://www.omdbapi.com/?s=${props.onChange}&apikey=10cf3ef8`
+        `http://www.omdbapi.com/?s=${props.onChange}&apikey=[addYourKey]`
       );
 
       const responseData = await response.json();
