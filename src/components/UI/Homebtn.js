@@ -51,13 +51,16 @@ const Homebtn = () => {
     setLikedMovies(true);
     setDislikedMovies(false);
     setSearchBar(false);
-    
+    setChoosenMovieName("");
+    setChosenMovie(false);
   };
 
   const dislikedMoviesHandler = () => {
     setDislikedMovies(true);
     setLikedMovies(false);
     setSearchBar(false);
+    setChoosenMovieName("");
+    setChosenMovie(false);
   };
 
   return (

@@ -50,3 +50,17 @@ margin-top: 20px;
     font-weight: bold;
     color: wheat;
 }
+
+.error{
+  color: red;
+  font-style: italic;
+  width: 50%;
+  display: flex;
+  margin: auto;
+  margin-top: 25px;
+  margin-bottom: 40px;
+  justify-content: center;
+  text-align: center;
+  font-weight: bolder;
+  font-size: smaller;
+}
