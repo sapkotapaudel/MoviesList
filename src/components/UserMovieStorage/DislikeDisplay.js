@@ -37,12 +37,7 @@ const DislikeDisplay =(props)=>{
       </div>
     </div>
     <div>
-        {/* {console.log(JSON.parse(localStorage.getItem(allMovies)).Title)}
-    {localStorage.getItem(allMovies).Title}
-    {localStorage.getItem(allMovies.Type)}
-    {localStorage.getItem(allMovies.Year)}
-    {localStorage.getItem(allMovies.Poster)}
-    {localStorage.getItem(allMovies.imdbId)}   */}
+   
     </div>
   </React.Fragment>
  
